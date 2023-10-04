@@ -29,7 +29,7 @@ const CTA = () => {
             </h2>
             <div className="w-full max-w-[494px] mt-12 space-y-3 mx-auto md:space-y-0 md:flex md:items-center md:space-x-2 lg:mx-0">
               <input
-                type="text"
+                type="email"
                 className="px-4 py-3 rounded-lg w-full font-bold text-xl placeholder:text-center placeholder:text-dark-light"
                 placeholder="Your Email"
               />

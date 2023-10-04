@@ -48,17 +48,21 @@ const postData = [
   }
 ]
 
+const tagsData = [
+  "Medical","LifeStyle" , "Learn" , "Healty" , " Food" ,"Diet" , "Education"
+]
+
 const ArticleDetailPage = () => {
   return (
     <MainLayout>
-       <section className=' container mx-auto max-w-5xl flex flex-col'>
+       <section className=' container mx-auto max-w-5xl flex flex-col lg:flex-row lg:gap-x-5 lg:items-start'>
           <article className='flex-1'>
               <BreadCrumbs data={breadCrumbsData}/>
               <img className='w-full rounded-xl ' src={images.post1Image} alt="laptop" />
-              <Link to='/blog?category=SelectedCategory' className='text-primary text-sm font-roboto inline-block mt-4'>
+              <Link to='/blog?category=SelectedCategory' className='text-primary text-sm font-roboto inline-block mt-4 md:text-base'>
                 Education
               </Link>
-              <h1 className=' text-xl font-medium font-roboto mt-4 text-dark-hard'>
+              <h1 className=' text-xl font-medium font-roboto mt-4 text-dark-hard md:text-[26px]'>
                   Help children get better education
               </h1>
               <div className='mt-4 text-dark-soft'>
@@ -72,7 +76,7 @@ const ArticleDetailPage = () => {
               </div>
               
           </article>
-          <SuggestedPost header="Latest Articles" post ={postData} />
+          <SuggestedPost header="Latest Articles" post ={postData} tags ={tagsData} className="mt-8 lg:mt-0 max-w-xs"/>
        </section>
     </MainLayout>
   )
