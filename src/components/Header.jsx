@@ -33,14 +33,14 @@ const Navitem = ({ item }) => {
           <div className={`${dropdown ? "block":"hidden"} lg:hidden transition-all duration-500 pt-4 lg:absolute lg:bottom-0 lg:right-0 lg:transform lg:translate-y-full lg:group-hover:block w-max`}>
              <ul className=" bg-dark-soft lg:bg-transparent text-center flex flex-col shadow-lg rounded-lg overflow-hidden ">
                 {
-                    item.items.map((page)=>{
-                        return<>
-                        <a href="/" className="hover:bg-dark-hard  hover:text-white px-4 py-2 lg:text-dark-soft ">
+                    item.items.map((page,index)=>{
+                        return<div key={index}>
+                        <a  href="/" className="hover:bg-dark-hard  hover:text-white px-4 py-2 lg:text-dark-soft ">
                                 {
                                     page
                                 }
                             </a>
-                        </> 
+                        </div> 
                             
                 
                     })

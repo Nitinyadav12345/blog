@@ -4,6 +4,8 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 import { images } from '../../constants'
 import { Link } from 'react-router-dom'
 import SuggestedPost from './container/SuggestedPost'
+import CommentContainer from '../../components/comments/CommentContainer'
+import SocialShareButtons from '../../components/SocialShareButtons'
 
 const breadCrumbsData = [
   {
@@ -55,7 +57,7 @@ const tagsData = [
 const ArticleDetailPage = () => {
   return (
     <MainLayout>
-       <section className=' container mx-auto max-w-5xl flex flex-col lg:flex-row lg:gap-x-5 lg:items-start'>
+       <section className=' container mx-auto max-w-5xl flex flex-col lg:flex-row lg:gap-x-5 lg:items-start px-5'>
           <article className='flex-1'>
               <BreadCrumbs data={breadCrumbsData}/>
               <img className='w-full rounded-xl ' src={images.post1Image} alt="laptop" />
@@ -74,9 +76,16 @@ const ArticleDetailPage = () => {
                   Odit incidunt libero corporis sint quae soluta similique illum corrupti sequi deserunt, dignissimos, vero maxime nobis sed beatae error? Earum dignissimos amet saepe tenetur tempore quis voluptates adipisci quas voluptas.
                 </p>
               </div>
-              
+              <CommentContainer  className=" mt-10" logginedUserId="a"/>
           </article>
-          <SuggestedPost header="Latest Articles" post ={postData} tags ={tagsData} className="mt-8 lg:mt-0 max-w-xs"/>
+          <div>
+          <SuggestedPost header="Latest Articles" post ={postData} tags ={tagsData} className="mt-8 lg:mt-0 lg:max-w-xs"/>
+           <div className=' mt-7'>
+              <h2 className=' font-roboto text-dark-hard mb-4 font-medium mb:text-xl'>Share on:</h2>
+              <SocialShareButtons url= "https://www.freecodecamp.org/" title="MERN stack Blog app"/>
+           </div>
+          </div>
+         
        </section>
     </MainLayout>
   )
