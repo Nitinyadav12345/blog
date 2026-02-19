@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { images } from "../constants";
 import { CgMenuGridO } from "react-icons/cg";
 import { MdOutlineCloseFullscreen } from "react-icons/md";
@@ -99,9 +100,9 @@ const Header = () => {
               <Navitem key={item.name} item={item} />
             ))}
           </ul>
-          <button className=" border-2 border-blue-500 px-5 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 ">
+          <Link to="/login" className=" border-2 border-blue-500 px-5 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 ">
             Sign in
-          </button>
+          </Link>
         </div>
       </header>
     </section>
